@@ -95,34 +95,8 @@
 
         <button type="submit">Masuk</button>
       </form>
-        <p style="margin-top: 15px; text-align: center;">Belum punya akun? <a href="#" onclick="showRegister()">Buat akun</a></p>
+        <p style="margin-top: 15px; text-align: center;">Belum punya akun? <a href="#" href="register.html">Buat akun</a></p>
       </div>
-
-  <div class="container" id="registerContainer" style="display: none;">
-    <div class="dashboard">
-      <h1>Buat Akun</h1>
-      <form id="registerForm">
-        <label for="regRole">Daftar sebagai:</label>
-        <select id="regRole" required>
-          <option value="">Pilih peran</option>
-          <option value="siswa">Siswa</option>
-          <option value="guru">Guru</option>
-        </select>
-
-        <label for="regUsername">Username:</label>
-        <input type="text" id="regUsername" required />
-
-        <label for="regPassword">Password:</label>
-        <input type="password" id="regPassword" required />
-
-        <label for="regConfirmPassword">Konfirmasi Password:</label>
-        <input type="password" id="regConfirmPassword" required />
-
-        <button type="submit">Daftar</button>
-        <p style="margin-top: 15px; text-align: center;"><a href="#" onclick="showLogin()">Sudah punya akun? Masuk di sini</a></p>
-      </form>
-    </div>
-  </div>
 
   <script>
     document.getElementById("loginForm").addEventListener("submit", function (e) {
@@ -138,35 +112,11 @@
         alert("Harap isi semua kolom!");
       }
     });
-      function showRegister() {
-      document.querySelector("#registerContainer").style.display = "flex";
-      document.querySelector(".container").style.display = "none";
-    }
+      
 
-    function showLogin() {
-      document.querySelector("#registerContainer").style.display = "none";
-      document.querySelector(".container").style.display = "flex";
-    }
+    
 
-    document.getElementById("registerForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-      const role = document.getElementById("regRole").value;
-      const username = document.getElementById("regUsername").value;
-      const password = document.getElementById("regPassword").value;
-      const confirmPassword = document.getElementById("regConfirmPassword").value;
-
-      if (password !== confirmPassword) {
-        alert("Password tidak cocok!");
-        return;
-      }
-
-      if (role && username && password) {
-        alert(`Akun berhasil dibuat untuk ${role.toUpperCase()}`);
-        showLogin();
-      } else {
-        alert("Harap isi semua kolom!");
-      }
-    });
+    
   </script>
 </body>
 </html>
